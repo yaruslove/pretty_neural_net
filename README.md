@@ -89,9 +89,10 @@ A solution to those setbacks is the use of “padding”. Before we apply a conv
 $$output\_height = (input\_height + 2 * padding - (kernel\_size - 1) - 1) // stride + 1$$
 $$output\_width = (input\_width + 2 * padding - (kernel\_size - 1) - 1) // stride + 1$$  
 
-output_height - height diminsion output image  
-input\_height - height diminsion input image  
-padding - func that add to the borders of an image top, down, sides
+**output_height** - height diminsion output image  
+**input\_height** - height diminsion input image  
+**padding** - func that add to the borders of an image top, down, sides  
+**```//```** - division without remainder
 
 
 ```python
