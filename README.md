@@ -90,11 +90,7 @@ my_conv.set_kernel(my_kernel)
 
 # Inference
 output=my_conv(img)
-```
-
-my_conv = Conv2dLoop(in_channels, out_channels, kernel_size, stride)
-# my_conv.set_kernel(kernel)
-my_conv.set_kernel(my_kernel)
+```  
 
 ![](./imgs/02_conv_layer/00_conv2d.gif)  
 
