@@ -67,7 +67,34 @@ torch_output=my_batch_norm1d(torch_input)
 
 # 02 Convolutional Layer
 
-Convolutional layers are the major building blocks used in convolutional neural networks.
+Convolutional layers are the major building blocks used in convolutional neural networks.  
+[My code of implimentation Conv2d:](./src/layers/Conv2dLoop.py)    
+```python
+import torch
+
+# Create kernel weight
+my_kernel = torch.randint(10, (4, 3, 3, 3)).to(torch.float32)
+my_kernel.shape
+
+# Create batch images: amount_imgs=2 , in_chanels=3 , hight=7, widith=10
+img = torch.randint(10, (2, 3, 7, 10)).to(torch.float32)
+
+# Set Conv2d layer
+in_channels = 3
+out_channels = 4
+kernel_size = 3
+stride = 1
+my_conv = Conv2dLoop(in_channels, out_channels, kernel_size, stride)
+# Set weight
+my_conv.set_kernel(my_kernel)
+
+# Inference
+output=my_conv(img)
+```
+
+my_conv = Conv2dLoop(in_channels, out_channels, kernel_size, stride)
+# my_conv.set_kernel(kernel)
+my_conv.set_kernel(my_kernel)
 
 ![](./imgs/02_conv_layer/00_conv2d.gif)  
 
@@ -92,7 +119,7 @@ $$output\_width = (input\_width + 2 * padding - (kernel\_size - 1) - 1) // strid
 **output_height** - height diminsion output image  
 **input\_height** - height diminsion input image  
 **padding** - func that add to the borders of an image top, down, sides  
-**```//```** - division without remainder
+**//** - division without remainder
 
 
 ```python
