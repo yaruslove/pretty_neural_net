@@ -71,6 +71,7 @@ Convolutional layers are the major building blocks used in convolutional neural 
 [My code of implimentation Conv2d:](./src/layers/Conv2dLoop.py)    
 ```python
 import torch
+from src.layers.Conv2dLoop import Conv2dLoop
 
 # Create kernel weight
 my_kernel = torch.randint(10, (4, 3, 3, 3)).to(torch.float32)
